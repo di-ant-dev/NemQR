@@ -1,0 +1,220 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="org.diant.nmqr.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_root"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth="wrap_content_constrained">
+
+        <androidx.camera.view.PreviewView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/camera_preview">
+
+        </androidx.camera.view.PreviewView>
+
+        <ImageView
+            android:id="@+id/screen_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/grid_masked" />
+
+        <ImageView
+            android:id="@+id/scanline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha=".3"
+            android:backgroundTint="#0ED3C0" />
+
+        <ImageView
+            android:id="@+id/decor_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/decor_text1" />
+
+        <ImageView
+            android:id="@+id/base_plate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/base" />
+
+        <ImageView
+            android:id="@+id/text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/text_bg" />
+
+        <ImageView
+            android:id="@+id/circle_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circle_out" />
+
+        <ImageView
+            android:id="@+id/circle_out_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circle_out" />
+
+        <ImageView
+            android:id="@+id/circle_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circle_in" />
+
+        <ImageView
+            android:id="@+id/circle_in_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/circle_in" />
+
+        <ImageView
+            android:id="@+id/text_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/result_text_analysis" />
+
+        <ImageView
+            android:id="@+id/text_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/result_text_no_infection" />
+
+        <ImageView
+            android:id="@+id/text_failure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/result_text_infected" />
+
+        <ImageView
+            android:id="@+id/button_start_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/button_start" />
+
+        <ImageView
+            android:id="@+id/button_reset_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/button_reset" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clickable_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bs_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bs_r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bs_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bs_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <Button
+                android:id="@+id/button_start"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#00FFFFFF"
+                android:text=""
+                android:textColor="#00FFFFFF"
+                android:textColorHighlight="#00FFFFFF"
+                android:textColorHint="#00FFFFFF"
+                android:textColorLink="#00FFFFFF"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/bs_b"
+                app:layout_constraintLeft_toLeftOf="@id/bs_l"
+                app:layout_constraintRight_toRightOf="@id/bs_r"
+                app:layout_constraintTop_toTopOf="@id/bs_t"
+                app:rippleColor="#00FFFFFF" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/br_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.65" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/br_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/br_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/br_r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="0dp"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <Button
+                android:id="@+id/button_reset"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#00FFFFFF"
+                android:text=""
+                android:textColor="#00FFFFFF"
+                android:textColorHighlight="#00FFFFFF"
+                android:textColorHint="#00FFFFFF"
+                android:textColorLink="#00FFFFFF"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/br_b"
+                app:layout_constraintLeft_toLeftOf="@id/br_l"
+                app:layout_constraintRight_toRightOf="@id/br_r"
+                app:layout_constraintTop_toTopOf="@id/br_t"
+                app:rippleColor="#00FFFFFF" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
